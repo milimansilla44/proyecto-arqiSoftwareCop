@@ -1,0 +1,5 @@
+docker run -p 33060:3306 --name mysql-db -e MYSQL_ROOT_PASSWORD=secret mysql
+
+docker build -t backend .
+
+insert into users (username, password, city, street, number, name) values ("milimansilla", "1234", "CBA", "Avenida", 100, "Milagros");

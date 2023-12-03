@@ -1,0 +1,8 @@
+docker run -d -p 33060:3306 --name trabajoarqui -e MYSQL_ROOT_PASSWORD=true mysql
+docker rm -f trabajoarqui
+docker volume prune
+docker volume create trabajoarqui-data
+docker run -d -p 33060:3306 --name trabajoarqui  -e MYSQL_ROOT_PASSWORD=true --mount src=trabajoarqui-data,dst=/var/lib/mysql mysql
+docker exec -it trabajoarqui mysql -p
+	-> ingresar contraseña: secret
+create database nodelogin;
